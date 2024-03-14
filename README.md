@@ -1,2 +1,3 @@
 # JS-Exercises
-# JS-Exercises
+
+## 1: Higher Order Functions:
