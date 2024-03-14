@@ -142,7 +142,7 @@ let newArr = arr1.concat(arr2, 'g', 'h');
 *   Diziyi belirtilen indexler arasında ayırır ve yeni bir dizi döner.
 */
 let slicedArr = numbers.slice(2, 5);
-console.log(slicedArr); // [3, 4, 5]
+// console.log(slicedArr); // [3, 4, 5]
 
 /* 14: Splice fonksiyonu
 *   Diziye hem eleman eklemek için hem de eleman silmek için kullanılır. 
@@ -153,24 +153,48 @@ console.log(slicedArr); // [3, 4, 5]
 const months = ['Ocak', 'Mart', 'Nisan', 'Temmuz'];
 months.splice(1, 0, 'Şubat');
 // 1. indexe ekler 
-console.log(months); // ["Jan", "Feb", "March", "April", "June"]
+// console.log(months); // ["Jan", "Feb", "March", "April", "June"]
 
 months.splice(4, 1, 'Mayıs');
 // 4. indexe ekler ve temmuz elemenını siler.
-console.log(months); // ["Jan", "Feb", "March", "April", "May"]
+// console.log(months); // ["Jan", "Feb", "March", "April", "May"]
 
 
+/* ZAMAN AYARLI İŞLEMLER */
 
 /* 15: setInterval fonksiyonu
+*  Belirtilen süre aralıklarında belirtilen işlemi yapar.
+*  setInterval(callback, durationasMiliSeconds)
+*  !DİKKAT: Bu işlem asenkron olarak çalışır ve durdurulana kadar devam eder.
 * 
+*  clearInterval() fonksiyonu ile durdurulabilir.
 */
+function sayHello() {
+    console.log('Hello');
+}
+const interval = setInterval(sayHello, 1000); // 1 saniyede bir 'Hello' yazar.
 
+setTimeout(() => {
+    clearInterval(interval); // 5 saniye sonra işlemi durdurur.
+    console.log('Interval durduruldu.');
+}, 5000);
 
 /* 16: setTimeout fonksiyonu
-* 
+*  Belirtilen süre sonra, belirtilen işlemi yapar.
+*  setTimeout(callback, durationasMiliSeconds)
+* !DİKKAT: Bu işlem asenkron olarak çalışır ve durdurulana kadar devam eder.
+*
+*  clearTimeout() fonksiyonu ile durdurulabilir.
 */
+function sayGoodbye() {
+    console.log('Goodbye');
+}
+const timeout = setTimeout(sayGoodbye, 5000); // 5 saniye sonra 'Goodbye' yazar.
 
-
+setTimeout(() => {
+    clearTimeout(timeout); // 3 saniye sonra işlemi durdurur.
+    console.log('Timeout durduruldu.');
+}, 3000);
 
 
 
